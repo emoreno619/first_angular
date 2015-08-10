@@ -63,10 +63,33 @@ We're going to start by setting up a very simple Angular app. Soon we'll learn a
 Questions:
 
     Why learn Angular JS over other frameworks like Ember, Backbone, Knockout, etc?
+    
+    Angular is framework with lots of structure and built-in functionality. So, while it has strict requirements in terms of file structure and intial
+    setup, it also comes packaged with lots of features and requires relatively
+    little code to implement those features. Additionally, Angular is relatively easy to use, backed by Google and thus stable and has lots of documentation, integrated with CSS frameworks like bootstrap and prevalent among businesses.
+
+    Angular also offers interesting technical features, perhaps most notably two-way data binding. Two-way data binding allows changes in a view to be represented in a model with fewer steps and events in between. Angular is also small to download and sometimes doesn't even require jQuery. Angular supports full dependency inject, making it easy to test and find bugs.
+
     People have some very strong opinions about Angular. What are 3 common complaints people have about Angular?
+
+    Angular lacks composed views. Composed views allow for structure and a hierachy to be imposed on views and their controllers, which enable them to be more modular and their components to be recycled. Angular is too focused on views and is cluttered with too many html tags.
+
+    Angular has two-way data binding. This is both a pro and con. Some developers do not prefer the mystique of the two-way data binding because it can obscure the innerworkings of application and how data is conferred from a view to model and vice versa. Moreover, besides obscuring how data is actually transferred and which events allow that transfer, as an application rises in complexity, the built-in functionalities of two-way data binding can become overbearingly heavy and slow and disrupt scaling.
+
+    Dependency injection conflicts with minification. Syntax different from server-side languages, so requires specialized knowledge rather than translatable skills.
+
+
     Is Angular an MVC framework?
+    
+    Angular is more an MV* framework than an MVC framework because it places much of the controller logic into the views, alongside HTML.
+
     Why did I say jQuery is "sort of" a dependency of Angular? Does it depend on it or not?!
+
+    Angular directives can (and should) replace most jQuery functionality since they are more lightweight. In short, Angular can do what jQuery does, so it need not be included.
+
     Read the docs for ng-app. What is it and what does it do?
+
+    The ngApp directive designates the root element of the application and is typically placed near the root element of the page - e.g. on the <body> or <html> tags. Only one AngularJS application can be auto-bootstrapped per HTML document. 
 
 Resources:
 
