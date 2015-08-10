@@ -28,10 +28,25 @@ EXERCISE: Use ng-model with a dropdown menu(select tag). Give the user the follo
 Questions
 
     What does ng-model do?
+
+    Ng-model creates a new variable in the model that is named with whatever value is passed to ng-model.
+
     What is "dirty checking"?
+
+    "Dirty checking" is the process of watching certain variables for changes. For a list of variables within a scope, all of those variables will be checked until a change is noticed and the DOM is updated to reflect that change.
+
     Find a way to set the initial value of "name" as "BoJack"(without writing a controller).
+    
+    ng-init
+
     What are those {{ }} expressions? Are they Handlebars?
+
+    The double curly braces represent binding, a core feature of Angular. The binding tells Angular that it should evaluate an expression and insert the result into the DOM in place of the binding. Rather than a one-time insert, as we'll see in the next steps, a binding will result in efficient continuous updates whenever the result of the expression evaluation changes.
+
     Explain what 2-way data binding is.
+    
+    2-way data binding allows models and views to be connected and simluatneously updated. So a change to a model on the DOM is reflected in the model and similarly a change in the model is reflected on the DOM in concert.
+
     BONUS: Research the $digest loop
 
 Resources:
