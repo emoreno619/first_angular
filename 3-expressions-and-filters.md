@@ -57,6 +57,8 @@ Let's try using another built-in filter to format our data.  Angular has a `numb
 
 alert("Hi {{name}}") // => "Hi {{name}}"
 
+Angular expressions run in the digest context.
+
 Questions:
 
 * What are Angular expressions? How do they compare to EJS/ERB tags?
@@ -65,7 +67,7 @@ Angular expressions are like EJS/ERB tags in that they are dynamic variables tha
 
 * What happens when you write invalid code in an expression?  What type of error do you get?
 
-No error :(
+No error :( sometimes syntax...but if prop is undefined no error.
 
 * What are Angular filters?  Name 4 built-in filters, including one that we haven't used yet.
 

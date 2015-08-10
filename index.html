@@ -2,9 +2,13 @@
 <html lang="en" ng-app="firstApp">
 <head>
 	<meta charset="UTF-8">
+
+	<link rel="stylesheet" href="style.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js"></script>
 
 	<script src="./app.js"></script>
 	<script src="./vanilla.js"></script>
@@ -91,6 +95,87 @@
     	<h1>My favorite color is: {{favColor}}</h1>
     	<h3>Seconds in a century: {{secondsInACentury | number}}</h3>
     	<h3>The time is: {{rightNow}}</h3>
+
+    	<ul>
+	        <li ng-repeat="name in names">
+	            {{name}}
+	         </li>
+	         <li ng-bind-html="symbol" ng-repeat="symbol in symbols">
+	            {{symbol}}
+	         </li>
+	         <li ng-repeat="dup in dups track by $index">
+	         	{{dup}}
+	         </li>
+	         <li ng-repeat="prop in obj">
+	            {{prop}}
+	         </li>
+	    </ul>
     </div>
+
+    <div ng-hide="3 + 4 == 7">
+        3 + 4 is 7, do hide
+    </div>
+
+	<p>
+		<h2>Sign up page</h2>
+		<input type="password" ng-model='password'>
+		<h3 ng-class='{highlight: password.length >=6, lowlight: password.length <6}'>
+			<ng-pluralize ng-model="password" count="password.length"
+			                when="{'1': 'Your password is 1 character long',
+			                'other': 'Your password is {{password.length}} characters long'			                  
+			                   		}">
+			  </ng-pluralize>
+		</h3>
+
+		<div ng-model='password' ng-show="password.length >= 6">
+			<input type="submit" value="Sign up!">
+		</div>
+		<div ng-model='password' ng-hide='password.length >= 6'>
+			<h4>Invalid password!</h4>
+		</div>
+	</p>
+
+	<p>
+		<h2>Camera Shop</h2>
+		<select ng-model="option" name="option" id="">
+			<option value="rating">rating</option>
+			<option value="price">price</option>
+		</select>
+
+		<div ng-hide="option == 'rating' || option == 'price'">
+			<ul ng-controller="ExercisesController">
+				<li ng-repeat="cam in cameras | orderBy:'title'">
+					<h3>{{cam.title}}</h3>
+					<h4 ng-show='cam.onSale' class=sale>Price: {{cam.price}} ON SALE!!</h4>
+					<h4 ng-show='!cam.onSale'>Price: {{cam.price}}</h4>
+					<h4>Rating: {{cam.rating}}</h4>
+					<img ng-src="{{cam.image}}" alt="">
+				</li>
+			</ul>
+		</div>
+		<div ng-show="option == 'rating'">
+			<ul ng-controller="ExercisesController">
+				<li ng-repeat="cam in cameras | orderBy:'-rating'">
+					<h3>{{cam.title}}</h3>
+					<h4 ng-show='cam.onSale' class=sale>Price: {{cam.price}} ON SALE!!</h4>
+					<h4 ng-show='!cam.onSale'>Price: {{cam.price}}</h4>
+					<h4>Rating: {{cam.rating}}</h4>
+					<img ng-src="{{cam.image}}" alt="">
+				</li>
+			</ul>
+		</div>
+		<div ng-show="option == 'price'">
+			<ul ng-controller="ExercisesController">
+				<li ng-repeat="cam in cameras | orderBy:'price'">
+					<h3>{{cam.title}}</h3>
+					<h4 ng-show='cam.onSale' class=sale>Price: {{cam.price}} ON SALE!!</h4>
+					<h4 ng-show='!cam.onSale'>Price: {{cam.price}}</h4>
+					<h4>Rating: {{cam.rating}}</h4>
+					<img ng-src="{{cam.image}}" alt="">
+				</li>
+			</ul>
+		</div>
+	</p>
+
 </body>
 </html>
