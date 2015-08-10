@@ -55,9 +55,22 @@ Let's try using another built-in filter to format our data.  Angular has a `numb
 
 **EXERCISE: With one single expression, prove that the context angular expressions run is not the window object.  What is it instead?**
 
+alert("Hi {{name}}") // => "Hi {{name}}"
+
 Questions:
 
 * What are Angular expressions? How do they compare to EJS/ERB tags?
+
+Angular expressions are like EJS/ERB tags in that they are dynamic variables that are embedded within html. However, they differ in that they cannot handle much logic, like conditionals or loops.
+
 * What happens when you write invalid code in an expression?  What type of error do you get?
+
+No error :(
+
 * What are Angular filters?  Name 4 built-in filters, including one that we haven't used yet.
+
+Angular filters are like built in methods for changing data before it is displayed. Filters include uppercase, lowercase, number and date.
+
 * We'll soon see how to create custom filters.  What is a use case for a custom filter?
+
+A custom filter is good for when the filter needs to be used repeatedly (like a function), so that it can be called multiple times.

@@ -35,5 +35,52 @@
 		<h2>{{yellowhisper|lowercase}}</h2>
 	</p>
 
+	<p>
+		<h2>How many digits of precision for pi would you like?</h2>
+		<select name="dropdown" ng-model="digits" id="">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+		</select>
+	</p>
+
+	<p>
+		<h2>Here you are! 
+			<ng-pluralize ng-model="digits" count="digits"
+			                when="{'1': 'The first digit of pi',
+			                       '2': 'The first two digits of pi',
+									'3': 'The first three digits of pi',
+									'4': 'The first four digits of pi',
+									'5': 'The first five digits of pi',
+									'6': 'The first six digits of pi',
+									'7': 'The first seven digits of pi',
+			                   		}">
+			  </ng-pluralize>
+		</h2>
+	</p>
+	<p>
+		<h2>{{3.14159265359 | number:digits}}</h2>
+	</p>
+
+
+	<p>
+		<h2>Super Useful Tip Calculator</h2>
+		<h4>How much does your meal cost?</h4>
+		<input type="text" ng-model="price">
+		<select name="tips" id="" ng-model="tips">
+			<option value="10">10%</option>
+			<option value="15">15%</option>
+			<option value="20">20%</option>
+		</select>
+		<h3>Subtotal: {{price}}</h3>
+		<h3>Tip: {{price * tips/100}}</h3>
+	</p>
+
+	<script>alert("Hi {{name}}")</script>
+
 </body>
 </html>
