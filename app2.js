@@ -18,14 +18,17 @@ app.controller("pongController", function($scope){
 	var p1ServeFirst;
 	var p1Wins = 0;
 	var p2Wins = 0;
+	$scope.p1IsWinner;
 
 	$scope.score1 = function(){
 		$scope.p1Score += 1
 		turnCounter += 1
 		if(!checkWin())
 			checkServe()
-		else
+		else{
 			$scope.p1Serve = "WINNER!"
+			$scope.p1IsWinner = false;
+		}
 	}
 
 	$scope.score2 = function(){
@@ -33,8 +36,10 @@ app.controller("pongController", function($scope){
 		turnCounter += 1
 		if(!checkWin())
 			checkServe()
-		else
-			$scope.p2Serve = "WINNER!"
+		else{
+			$scope.p1Serve = "WINNER!"
+			$scope.p1IsWinner = true;
+		}
 	}
 
 	function checkServe(){

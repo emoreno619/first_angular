@@ -9,3 +9,19 @@
 .sale {
 	color: orange;
 }
+
+.pong {
+	width: 400px; 
+	height: 300px;
+	background-color: blue;
+	float: left; 
+	margin-left: 10px;
+}
+
+.winner {
+	background-color: green;
+}
+
+.loser {
+	background-color: red;
+}
