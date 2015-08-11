@@ -50,7 +50,7 @@
 			<input ng-click="addContact()" type="submit" value="Add Contact">
 		</form>
 		<label for="search">Search</label>
-		<input type="text">
+		<input type="text" ng-model="searchText">
 
 		<table>
 			<tr>
@@ -58,7 +58,7 @@
 				<th>Email</th>
 				<th>Phone</th>
 			</tr>
-			<tr ng-repeat="contact in contacts">
+			<tr ng-repeat="contact in contacts | filter:searchText">
 				<td>{{contact.name}}</td>
 				<td>{{contact.email}}</td>
 				<td>{{contact.phone}}</td>
