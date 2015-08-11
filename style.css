@@ -26,3 +26,11 @@
 .loser {
 	background-color: red;
 }
+
+.shadow {
+	background-color: pink;	
+}
+
+.noshadow {
+	background-color: white;
+}

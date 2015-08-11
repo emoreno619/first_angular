@@ -20,6 +20,17 @@ app.controller("contactController", function($scope){
 		$scope.contact = {}
 		// console.log(contacts)
 	}
+
+	$scope.highlightMe = function(event){
+		$scope.highlight = true;
+		$scope.lowlight = false;
+		console.log(event)
+	}
+
+	$scope.lowlightMe = function(event){
+		$scope.highlight = false;
+		$scope.lowlight = true;
+	}
 })
 
 app.controller("pongController", function($scope){

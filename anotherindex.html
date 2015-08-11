@@ -58,7 +58,7 @@
 				<th>Email</th>
 				<th>Phone</th>
 			</tr>
-			<tr ng-repeat="contact in contacts | filter:searchText">
+			<tr ng-mouseenter="highlightMe()" ng-mouseleave="lowlightMe()" ng-class='{shadow: highlight, noshadow: lowlight}' ng-repeat="contact in contacts | filter:searchText">
 				<td>{{contact.name}}</td>
 				<td>{{contact.email}}</td>
 				<td>{{contact.phone}}</td>
