@@ -11,6 +11,17 @@ app.controller("MySecondController", function($scope){
     }
 })
 
+app.controller("contactController", function($scope){
+	$scope.contacts = []
+
+	$scope.addContact = function(){
+		var newContact = $scope.contact
+		$scope.contacts.push(newContact)
+		$scope.contact = {}
+		// console.log(contacts)
+	}
+})
+
 app.controller("pongController", function($scope){
 	$scope.p1Score = 0
 	$scope.p2Score = 0

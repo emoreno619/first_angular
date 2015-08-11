@@ -24,7 +24,7 @@
 		</p>
 	</div>
 
-	<div ng-controller="pongController" style='height:200px'>
+	<div ng-controller="pongController" style='height:300px; margin-right: 100px; margin-bottom: 100px;'>
 		<div class='pong' ng-click='score1()' ng-class='{winner: p1IsWinner == 1, loser: p1IsWinner == 2}'>
 			<h1 style='margin-left:35%' >Player 1</h1>
 			<h2 style='margin-left:47%'>{{p1Score}}</h2>
@@ -36,6 +36,35 @@
 			<h2 style='margin-left:40%'>{{p2Serve}}</h2>
 		</div>
 		<button ng-click="reset()">Reset</button>
+	</div>
+
+	<div style="margin-left:50px;" ng-controller="contactController">
+		<h1>Contacts App</h1>
+		<form style="margin-bottom:25px;" action="javascript:void(0)">
+			<label for="Name">Name:</label>
+			<input type="text" name="name" ng-model="contact.name">
+			<label for="Email">Email:</label>
+			<input type="text" name="email" ng-model="contact.email">
+			<label for="Phone">Phone:</label>
+			<input type="text" name="phone" ng-model="contact.phone">
+			<input ng-click="addContact()" type="submit" value="Add Contact">
+		</form>
+		<label for="search">Search</label>
+		<input type="text">
+
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+			</tr>
+			<tr ng-repeat="contact in contacts">
+				<td>{{contact.name}}</td>
+				<td>{{contact.email}}</td>
+				<td>{{contact.phone}}</td>
+			</tr>
+		</table>
+
 	</div>
 </body>
 </html>
