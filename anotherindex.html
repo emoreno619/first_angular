@@ -28,14 +28,14 @@
 		<div class='pong' ng-click='score1()' ng-class='{winner: p1IsWinner == 1, loser: p1IsWinner == 2}'>
 			<h1 style='margin-left:35%' >Player 1</h1>
 			<h2 style='margin-left:47%'>{{p1Score}}</h2>
-			<h2 style='margin-left:47%'>{{p1Serve}}</h2>
+			<h2 style='margin-left:40%'>{{p1Serve}}</h2>
 		</div>
 		<div class='pong' ng-click='score2()' ng-class='{winner: p1IsWinner == 2, loser: p1IsWinner == 1}'>
 			<h1 style='margin-left:35%'>Player 2</h1>
 			<h2 style='margin-left:47%'>{{p2Score}}</h2>
-			<h2 style='margin-left:47%'>{{p2Serve}}</h2>
+			<h2 style='margin-left:40%'>{{p2Serve}}</h2>
 		</div>
-		<button ng-click></button>
+		<button ng-click="reset()">Reset</button>
 	</div>
 </body>
 </html>

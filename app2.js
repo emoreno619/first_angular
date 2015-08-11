@@ -18,7 +18,7 @@ app.controller("pongController", function($scope){
 	var p1ServeFirst;
 	var p1Wins = 0;
 	var p2Wins = 0;
-	$scope.p1IsWinner;
+	$scope.p1IsWinner = 0;
 
 	$scope.score1 = function(){
 		$scope.p1Score += 1
@@ -27,7 +27,8 @@ app.controller("pongController", function($scope){
 			checkServe()
 		else{
 			$scope.p1Serve = "WINNER!"
-			$scope.p1IsWinner = false;
+			$scope.p2Serve = ""
+			$scope.p1IsWinner = 1;
 		}
 	}
 
@@ -37,9 +38,19 @@ app.controller("pongController", function($scope){
 		if(!checkWin())
 			checkServe()
 		else{
-			$scope.p1Serve = "WINNER!"
-			$scope.p1IsWinner = true;
+			$scope.p2Serve = "WINNER!"
+			$scope.p1Serve = ""
+			$scope.p1IsWinner = 2;
 		}
+	}
+
+	$scope.reset = function(){
+		$scope.p1Score = 0
+		$scope.p2Score = 0
+		$scope.p1Serve = ""
+		$scope.p2Serve = ""
+		turnCounter = 0
+		$scope.p1IsWinner = 0
 	}
 
 	function checkServe(){
@@ -50,7 +61,7 @@ app.controller("pongController", function($scope){
 			$scope.p1Serve = "Serving"
 			p1ServeFirst = true;
 		} else if (p1ServeFirst){
-			if(turnCounter < 3 || (turnCounter > 4 && turnCounter < 7) || (turnCounter > 8 && turnCounter < 11)){
+			if(turnCounter < 3 || (turnCounter > 4 && turnCounter < 7) || (turnCounter > 8 && turnCounter < 11) || (turnCounter > 12 && turnCounter < 15) || (turnCounter > 16 && turnCounter < 19)){
 				$scope.p1Serve = "Serving"
 				$scope.p2Serve = ""
 			} else {
@@ -58,7 +69,7 @@ app.controller("pongController", function($scope){
 				$scope.p1Serve = ""
 			}
 		} else {
-			if(turnCounter < 3 || (turnCounter > 4 && turnCounter < 7) || (turnCounter > 8 && turnCounter < 11)){
+			if(turnCounter < 3 || (turnCounter > 4 && turnCounter < 7) || (turnCounter > 8 && turnCounter < 11) || (turnCounter > 12 && turnCounter < 15) || (turnCounter > 16 && turnCounter < 19)){
 				$scope.p2Serve = "Serving"
 				$scope.p1Serve = ""
 			} else {
