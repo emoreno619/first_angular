@@ -167,7 +167,21 @@ Use the following data:
 Questions
 
 * Why use `ng-src` and `ng-href`?
+
+Using Angular markup like {{hash}} in an href attribute will make the link go to the wrong URL if the user clicks it before Angular has a chance to replace the {{hash}} markup with its value. Until Angular replaces the markup the link will be broken and will most likely return a 404 error. The ngHref directive solves this problem.
+
 * What are directives?
+
+Directives are how Angular extends html and provides additional logic and functionality. Examples of directives include ng-repeat which works like a loop and ng-show and ng-hide which take conditional expressions. Furthermore, directives can be customized for additional functionality.
+
 * Does ng-class require an object to be passed in?
+
+No, not exactly. It does take an object. It also can take a string or array that contains either a string or object representing class names.
+
 * What order does an ng-repeat display items in?
+
+Ng-repeat follows the order returned by the browser when it executes for..in on keys in an object. This order is generally the order in which the keys were defined, but can differ, most notably when keys are deleted or reinstated.
+
 * How does ng-repeat handle duplicate data?
+
+Ng-repeat does not allow duplicates in arrays because duplicates cause problems with one-to-one mapping of items with their DOM elements. This behavior can be overwritten by specifying to track by index rather than the value at that index.
