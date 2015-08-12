@@ -89,48 +89,49 @@
 		    </div>
 		    <div class="postContent">
 		    	<p>
-		    		{{post.content}}
+		    		{{post.description}}
 		    	</p>
 		    </div>
 		    <div class="postFooter">
-		    	(date) | <a href="">{{post.comments.length}} Comment(s)</a> | <a ng-click="toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
+		    	(date) | <a href="">{{post.comments.length}} Comment(s)</a> | <a ng-click="this.toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
 		    </div>
 
-			<div class="panel panel-default" ng-repeat="comment in post.comments">
+			<div class="panel panel-default" ng-repeat="comment in post.comments track by $index">
 			  <div class="panel-body">
 			    {{comment.author}} says:
 			    <p>{{comment.text}}</p>
 			  </div>
 			</div>
-
-		    <div class="commentForm" ng-hide="!showCommentForm">
-		    	<form class="form-horizontal" action="javascript:void(0)">
-		    	  <fieldset>
-		    	    <legend>Add a Comment</legend>
-		    	    <div class="form-group">
-		    	      <label for="author" class="col-lg-2 control-label">Author</label>
-		    	      <div class="col-lg-4">
-		    	        <input class="form-control" id="author" placeholder="username" type="text" ng-model="comment.author" required>
-		    	      </div>
-		    	      <div class="col-lg-6"></div>
-		    	    </div>
-		    	    <div class="form-group">
-		    	      <label for="text" class="col-lg-2 control-label">Comment</label>
-		    	      <div class="col-lg-4">
-		    	        <input class="form-control" id="text" placeholder="comment text" type="text" ng-model="comment.text" required>
-		    	      </div>
-		    	      <div class="col-lg-6"></div>
-		    	    </div>
-	    	        <div class="form-group">
-	    	          <div class="col-lg-10 col-lg-offset-2">
-	    	            <button type="reset" class="btn btn-default">Cancel</button>
-	    	            <button ng-click="addComment()" type="submit" class="btn btn-primary">Submit</button>
-	    	          </div>
-	    	        </div>
-	    	      </fieldset>
-	    		</form>
-		    </div>
 		  
+	  	    <div class="commentForm" ng-hide="!this.showCommentForm">
+	  	    	<form class="form-horizontal" action="javascript:void(0)">
+	  	    	  <fieldset>
+	  	    	    <legend>Add a Comment</legend>
+	  	    	    <div class="form-group">
+	  	    	      <label for="author" class="col-lg-2 control-label">Author</label>
+	  	    	      <div class="col-lg-4">
+	  	    	        <input class="form-control" id="author" placeholder="username" type="text" ng-model="this.comment.author" required>
+	  	    	      </div>
+	  	    	      <div class="col-lg-6"></div>
+	  	    	    </div>
+	  	    	    <div class="form-group">
+	  	    	      <label for="text" class="col-lg-2 control-label">Comment</label>
+	  	    	      <div class="col-lg-4">
+	  	    	        <input class="form-control" id="text" placeholder="comment text" type="text" ng-model="this.comment.text" required>
+	  	    	      </div>
+	  	    	      <div class="col-lg-6"></div>
+	  	    	    </div>
+	      	        <div class="form-group">
+	      	          <div class="col-lg-10 col-lg-offset-2">
+	      	            <button type="reset" class="btn btn-default">Cancel</button>
+	      	            <button ng-click="this.addComment(this)" type="submit" class="btn btn-primary">Submit</button>
+	      	          </div>
+	      	        </div>
+	      	      </fieldset>
+	      		</form>
+	  	    </div>
+
+
 		  </div>
 		</div>
 
