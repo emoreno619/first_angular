@@ -1,6 +1,4 @@
 // TODO: 
-// 	     -date
-// 		 -add colors to votes
 // 		 -sort filter
 // 		 -style and icons
 // 		 -ng-animate

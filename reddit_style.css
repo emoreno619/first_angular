@@ -7299,3 +7299,9 @@ a.list-group-item-danger.active:focus {
 .panel-info .panel-heading {
   border-color: #000;
 }
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
