@@ -12,7 +12,7 @@ app.controller("redditController", function($scope){
    }
 
    $scope.toggleForm = function(){
-   	$scope.showForm = true;
+   	$scope.showForm = !$scope.showForm
    }
 
 
