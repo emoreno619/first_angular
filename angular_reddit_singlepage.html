@@ -85,7 +85,7 @@
 		    	<img ng-src="{{post.image}}" alt="">
 		    </div>
 		    <div class="postAuthor">
-		    	{{post.author}} | (Vote Arrows) (Votes) 
+		    	{{post.author}} | <a ng-click="this.addVote()" href="">Add</a> <a ng-click="this.subtractVote()" href="">Subtract</a> {{post.votes}} 
 		    </div>
 		    <div class="postContent">
 		    	<p>

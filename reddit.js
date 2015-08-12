@@ -31,6 +31,16 @@ app.controller("redditController", function($scope){
 	   	this.toggleComments = function(){
 	   		this.showComments = !this.showComments
 	   	}
+
+	   	this.addVote = function(){
+	   		this.post.votes += 1
+	   		console.log(this.post.votes)
+	   	}
+
+	   	this.subtractVote = function(){
+	   		this.post.votes -= 1
+	   	}
+
 	   	$scope.posts.push(newPost)
 	   	$scope.showForm = !$scope.showForm
    	}
