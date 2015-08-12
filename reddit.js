@@ -1,9 +1,9 @@
-// TODO: -pluralize comments
+// TODO: 
 // 	     -date
 // 		 -add colors to votes
 // 		 -sort filter
 // 		 -style and icons
-
+// 		 -ng-animate
 
 var app = angular.module('reddit', ['ngSanitize']);
 

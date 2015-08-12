@@ -93,7 +93,15 @@
 		    	</p>
 		    </div>
 		    <div class="postFooter">
-		    	(date) | <a ng-click="this.toggleComments()" href="">{{post.comments.length}} Comment(s)</a> | <a ng-click="this.toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
+		    	(date) | <a ng-click="this.toggleComments()" href="">
+
+		    	<ng-pluralize count="post.comments.length"
+		    	                 when="{'0': '0 Comments',
+		    	                     '1': '1 Comment',
+		    	                     'other': '{} Comments'}">
+		    	</ng-pluralize>
+		    	
+		    	</a> | <a ng-click="this.toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
 		    </div>
 
 			<div class="panel panel-default" ng-hide="!this.showComments" ng-repeat="comment in post.comments track by $index">
