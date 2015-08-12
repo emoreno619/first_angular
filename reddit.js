@@ -5,7 +5,7 @@
 // 		 -style and icons
 // 		 -ng-animate
 
-var app = angular.module('reddit', ['ngSanitize']);
+var app = angular.module('reddit', ['ngSanitize', 'angularMoment']);
 
 app.controller("redditController", function($scope){
    $scope.posts = []
@@ -19,6 +19,7 @@ app.controller("redditController", function($scope){
 	   	$scope.post.showComments = false
 	   	$scope.post.showCommentForm = false
 	   	$scope.post.comments = []
+	   	$scope.post.date = new Date();
 
 	    this.toggleCommentForm = function(){
 	   		$scope.comment = {}

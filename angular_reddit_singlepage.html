@@ -23,6 +23,10 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-sanitize.min.js"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.2/angular-moment.js"></script>
+	
+
 	<script src="./reddit.js"></script>
 
 </head>
@@ -92,15 +96,14 @@
 		    		{{post.description}}
 		    	</p>
 		    </div>
-		    <div class="postFooter">
-		    	(date) | <a ng-click="this.toggleComments()" href="">
+		    <div class="postFooter"><span am-time-ago="post.date"></span> | <a ng-click="this.toggleComments()" href="">
 
 		    	<ng-pluralize count="post.comments.length"
 		    	                 when="{'0': '0 Comments',
 		    	                     '1': '1 Comment',
 		    	                     'other': '{} Comments'}">
 		    	</ng-pluralize>
-		    	
+
 		    	</a> | <a ng-click="this.toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
 		    </div>
 
