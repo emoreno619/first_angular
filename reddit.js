@@ -1,3 +1,10 @@
+// TODO: -pluralize comments
+// 	     -date
+// 		 -add colors to votes
+// 		 -sort filter
+// 		 -style and icons
+
+
 var app = angular.module('reddit', ['ngSanitize']);
 
 app.controller("redditController", function($scope){
@@ -46,24 +53,7 @@ app.controller("redditController", function($scope){
    	}
    }
 
-   // $scope.addComment = function(){
-
-   // 	if($scope.comment.author && $scope.comment.text){
-   // 		var newComment = $scope.comment
-   // 		console.log($scope.post.title)
-   // 		$scope.post.comments.push(newComment)
-   // 		$scope.showCommentForm = !$scope.showCommentForm
-   // 	}
-   // }
-
-   // $scope.toggleComments = function(){
-   // 	$scope.showComments = !$scope.showComments
-   // }
-
-   // $scope.toggleCommentForm = function(){
-   // 	$scope.comment = {}
-   // 	$scope.showCommentForm = !$scope.showCommentForm
-   // }
+   //Toggles Add Post Form
 
    $scope.toggleForm = function(){
    	$scope.post = {}
