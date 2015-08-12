@@ -5,13 +5,33 @@ app.controller("redditController", function($scope){
    $scope.showForm = false;
 
    $scope.addPost = function(){
-   	var newPost = $scope.post
-   	$scope.posts.push(newPost)
-   	$scope.contact = {}
-   	// console.log(contacts)
+   	
+   	if($scope.post.title && $scope.post.author && $scope.post.description && $scope.post.image){
+	   	var newPost = $scope.post
+	   	$scope.post.votes = 0
+	   	$scope.post.comments = []
+	   	$scope.posts.push(newPost)
+	   	$scope.showForm = !$scope.showForm
+   	}
+   }
+
+   $scope.addComment = function(){
+
+   	if($scope.comment.author && $scope.comment.text){
+   		var newComment = $scope.comment
+   		console.log($scope.post.title)
+   		$scope.post.comments.push(newComment)
+   	}
+
+   }
+
+   $scope.toggleCommentForm = function(){
+   	$scope.comment = {}
+   	$scope.showCommentForm = !$scope.showCommentForm
    }
 
    $scope.toggleForm = function(){
+   	$scope.post = {}
    	$scope.showForm = !$scope.showForm
    }
 
