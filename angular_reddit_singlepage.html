@@ -5,7 +5,7 @@
 	<title>Document</title>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	
+
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 
@@ -96,6 +96,12 @@
 		    	(date) | <a href="">{{post.comments.length}} Comment(s)</a> | <a ng-click="toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
 		    </div>
 
+			<div class="panel panel-default" ng-repeat="comment in post.comments">
+			  <div class="panel-body">
+			    {{comment.author}} says:
+			    <p>{{comment.text}}</p>
+			  </div>
+			</div>
 
 		    <div class="commentForm" ng-hide="!showCommentForm">
 		    	<form class="form-horizontal" action="javascript:void(0)">

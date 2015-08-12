@@ -21,8 +21,12 @@ app.controller("redditController", function($scope){
    		var newComment = $scope.comment
    		console.log($scope.post.title)
    		$scope.post.comments.push(newComment)
+   		$scope.showCommentForm = !$scope.showCommentForm
    	}
+   }
 
+   $scope.toggleComments = function(){
+   	$scope.showComments = !$scope.showComments
    }
 
    $scope.toggleCommentForm = function(){
