@@ -93,10 +93,10 @@
 		    	</p>
 		    </div>
 		    <div class="postFooter">
-		    	(date) | <a href="">{{post.comments.length}} Comment(s)</a> | <a ng-click="this.toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
+		    	(date) | <a ng-click="this.toggleComments()" href="">{{post.comments.length}} Comment(s)</a> | <a ng-click="this.toggleCommentForm()" href="#" class="btn btn-primary btn-xs">Add Comment</a>
 		    </div>
 
-			<div class="panel panel-default" ng-repeat="comment in post.comments track by $index">
+			<div class="panel panel-default" ng-hide="!this.showComments" ng-repeat="comment in post.comments track by $index">
 			  <div class="panel-body">
 			    {{comment.author}} says:
 			    <p>{{comment.text}}</p>
