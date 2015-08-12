@@ -1,12 +1,19 @@
 var app = angular.module('reddit', ['ngSanitize']);
 
 app.controller("redditController", function($scope){
-    $scope.pickRandomNumber = function(){
-        $scope.number = Math.floor(Math.random() * 10) + 1
-    }
+   $scope.posts = []
+   $scope.showForm = false;
 
-    $scope.reverseIt = function(){
-    	var word = String($scope.reverse);
-    	$scope.output = word.split('').reverse().join('')
-    }
+   $scope.addPost = function(){
+   	var newPost = $scope.post
+   	$scope.posts.push(newPost)
+   	$scope.contact = {}
+   	// console.log(contacts)
+   }
+
+   $scope.toggleForm = function(){
+   	$scope.showForm = true;
+   }
+
+
 })
