@@ -66,7 +66,7 @@
 		      </ul>
 		      <form class="navbar-form navbar-left" role="search">
 		        <div class="form-group">
-		          <input class="form-control" placeholder="Search for keyword" type="text">
+		          <input class="form-control" placeholder="Search for keyword" type="text" ng-model="searchText">
 		        </div>
 		      </form>
 		    </div>
@@ -123,7 +123,7 @@
 
 	<!-- END ADD POST FORM -->
 
-		<div class="panel panel-primary" ng-repeat="post in posts track by $index">
+		<div class="panel panel-primary" ng-repeat="post in posts | filter:searchText">
 		  <div class="panel-heading">
 		    <h3 class="panel-title">{{post.title}}</h3>
 		  </div>
