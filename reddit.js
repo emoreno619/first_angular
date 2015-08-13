@@ -1,5 +1,4 @@
 // TODO: 
-// 		 -sort filter
 // 		 -style and icons
 // 		 -ng-animate
 
@@ -50,6 +49,11 @@ app.controller("redditController", function($scope){
 	   	$scope.posts.push(newPost)
 	   	$scope.showForm = !$scope.showForm
    	}
+   }
+
+   $scope.sortEm = function(param){
+   	console.log($scope.searchText)
+   	$scope.searchText = param
    }
 
    //Toggles Add Post Form
