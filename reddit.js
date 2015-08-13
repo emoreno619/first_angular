@@ -7,6 +7,7 @@ var app = angular.module('reddit', ['ngSanitize', 'angularMoment']);
 app.controller("redditController", function($scope){
    $scope.posts = []
    $scope.showForm = false;
+   $scope.order = '-votes'
 
    $scope.addPost = function(){
    	
@@ -51,10 +52,10 @@ app.controller("redditController", function($scope){
    	}
    }
 
-   $scope.sortEm = function(param){
-   	console.log($scope.searchText)
-   	$scope.searchText = param
+   $scope.setOrder = function (order){	
+		$scope.order = order;
    }
+
 
    //Toggles Add Post Form
 
